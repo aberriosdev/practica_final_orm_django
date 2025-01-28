@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Laboratorio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+        }
+        
+        .container {
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Ingresar los Datos del Laboratorio</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p>¿Información de los laboratorios?</p>
+        <a href="{% url 'laboratorio_list' %}">Ir a Información de los Laboratorios</a>
+    </div>
+</body>
+
+</html>
